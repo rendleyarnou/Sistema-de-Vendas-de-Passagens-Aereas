@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Implementation-Title: fbd
+Implementation-Version: 0.0.1-SNAPSHOT
+Built-By: braullio-soares
+Implementation-Vendor-Id: com.aerotickets
+Build-Jdk: 1.8.0_171
+Implementation-URL: https://projects.spring.io/spring-boot/#/spring-bo
+ ot-starter-parent/fbd
+Created-By: Maven Integration for Eclipse
+
