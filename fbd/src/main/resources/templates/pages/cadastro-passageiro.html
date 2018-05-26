@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="layout/head">
+<head>
+<meta charset="UTF-8" />
+<title>AeroTickets</title>
+<link rel="stylesheet" href="../static/libs/css/bootstrap.min.css"
+	th:href="@{/libs/css/bootstrap.min.css}" />
+<script src="/libs/js/jquery.min.js"></script>
+<script src="/libs/js/bootstrap.min.js"></script>
+</head>
+<body>
+	<!-- Menu -->
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+		<a class="navbar-brand" th:href="@{/}">AeroTickets</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse"
+			data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown"
+			aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarNavDropdown">
+			<ul class="navbar-nav">
+				<li class="nav-item"><a class="nav-link" th:href="@{/voos}">Voos</a></li>
+				<li class="nav-item"><a class="nav-link" href="#">Reservas</a></li>
+				<li class="nav-item"><a class="nav-link" th:href="@{/cadastro}">Cadastre-se</a></li>
+			</ul>
+		</div>
+	</nav>
+	<div class="container">
+	<form action="/voos" method="POST">
+		<div class="form-group row">
+			<label for="example-text-input" class="col-2 col-form-label">Nome</label>
+			<div class="col-10">
+				<input class="form-control" type="text" value="">
+			</div>
+		</div>
+		<div class="form-group row">
+			<label for="example-text-input" class="col-2 col-form-label">Idade</label>
+			<div class="col-10">
+				<input class="form-control" type="number" value="" max="100">
+			</div>
+		</div>
+		<div class="form-group row">
+			<label for="example-text-input" class="col-2 col-form-label">CPF</label>
+			<div class="col-10">
+				<input class="form-control" type="text" value="">
+			</div>
+		</div>
+		<div class="form-group row">
+			<label for="example-email-input" class="col-2 col-form-label">Email</label>
+			<div class="col-10">
+				<input class="form-control" type="email"
+					value="" placeholder="example@example.com">
+			</div>
+		</div>
+	</form>
+	</div>
+</body>
+</html>
+	
+	

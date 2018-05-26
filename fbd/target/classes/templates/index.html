@@ -1,34 +1,74 @@
 <!DOCTYPE html>
-<html lang="en"
-	xmlns:th="http://www.thymeleaf.org"
-	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
-    <head>
-    	<meta charset="UTF-8"/>
-        <title>AeroTickets</title>
-    </head>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="layout/head">
+<head>
+<meta charset="UTF-8" />
+<title>AeroTickets</title>
+<link rel="stylesheet" href="../static/libs/css/bootstrap.min.css"
+	th:href="@{/libs/css/bootstrap.min.css}" />
+<script src="/libs/js/jquery.min.js"></script>
+<script src="/libs/js/bootstrap.min.js"></script>
+</head>
 <body>
-	<h1>AeroTickets</h1>
-	
-				<table class="table table-hover" border="1">
-				<thead>
-					<tr>
-						<th>ID</th>
-						<th>ORIGEM</th>
-						<th>DESTINO</th>
-						<th>DATA</th>
-						<th>HORARIO</th>
-						<th>PREÇO</th>
-						</tr>
-				</thead>
 
-				<tr th:each="voo : ${voo}">
-					<td><span th:text="${voo.id}"></span></td>
-					<td><span th:text="${voo.origem}"></span></td>
-					<td><span th:text="${voo.destino}"></span></td>
-					<td><span th:text="${voo.datavoo}"></span></td>
-					<td><span th:text="${voo.horario}"></span></td>
-					<td><span th:text="${voo.preco}"></span></td>
-				</tr>
-			</table>
+	<!-- Menu -->
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+		<a class="navbar-brand" th:href="@{/}">AeroTickets</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse"
+			data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown"
+			aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarNavDropdown">
+			<ul class="navbar-nav">
+				<li class="nav-item"><a class="nav-link" th:href="@{/voos}">Voos</a></li>
+				<li class="nav-item"><a class="nav-link" href="#">Reservas</a></li>
+				<li class="nav-item"><a class="nav-link" th:href="@{/cadastro}">Cadastre-se</a></li>
+			</ul>
+		</div>
+	</nav>
+
+	<div class="container">
+		
+		<form action="/voos" method="POST">
+			<div class="form-group">
+				<label for="exampleFormControlSelect1">Origem</label> <select
+					class="form-control">
+					<option>Sao Paulo - GRU</option>
+					<option>Fortaleza - FOR</option>
+					<option>Braília - BRA</option>
+					<option>Paraiba - PB</option>
+					<option>Chicago - EUA</option>
+				</select>
+			</div>
+			<div class="form-group">
+				<label for="exampleFormControlSelect1">Destino</label> <select
+					class="form-control">
+					<option>Sao Paulo - GRU</option>
+					<option>Fortaleza - FOR</option>
+					<option>Braília - BRA</option>
+					<option>Paraiba - PB</option>
+					<option>Chicago - EUA</option>
+				</select>
+			</div>
+			<div class="form-group row">
+				<label for="example-date-input" class="col-2 col-form-label">Data</label>
+				<div class="col-10">
+					<input class="form-control" type="date" value="2011-08-19"
+						id="example-date-input">
+				</div>
+			</div>
+			<!-- 			<div class="form-group row">
+				<label for="example-time-input" class="col-2 col-form-label">Horário</label>
+				<div class="col-10">
+					<input class="form-control" type="time" value="13:45:00"
+						id="example-time-input">
+				</div>
+			</div> -->
+			<button type="submit" class="btn btn-primary btn-lg btn-block">Pesquisar</button>
+		</form>
+	</div>
+
 </body>
 </html>

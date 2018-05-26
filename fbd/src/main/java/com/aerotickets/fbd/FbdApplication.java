@@ -8,6 +8,5 @@ public class FbdApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(FbdApplication.class, args);
-		
 	}
 }
