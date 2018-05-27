@@ -2,7 +2,9 @@ package com.aerotickets.fbd.entity;
 
 public class Passageiro {
 	
-	private Long id;
+	private Integer pid;
+	
+	private String nome;
 	
 	private int idade;
 	
@@ -10,12 +12,29 @@ public class Passageiro {
 	
 	private String email;
 
-	public Long getId() {
-		return id;
+	public Passageiro() {};
+
+	public Passageiro( String nome, int idade, String cpf, String email) {
+		this.nome = nome;
+		this.idade = idade;
+		this.cpf = cpf;
+		this.email = email;
 	}
 
-	public void setId(Long id) {
-		this.id = id;
+	public Integer getPid() {
+		return pid;
+	}
+
+	public String getNome() {
+		return nome;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
+	public void setPid(Integer pid) {
+		this.pid = pid;
 	}
 
 	public int getIdade() {

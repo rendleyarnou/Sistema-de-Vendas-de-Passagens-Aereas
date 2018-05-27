@@ -33,7 +33,7 @@
 			<table class="table table-hover">
 				<thead>
 					<tr>
-						<th>ID</th>
+						<th>TICKET</th>
 						<th>ORIGEM</th>
 						<th>DESTINO</th>
 						<th>DATA</th>
@@ -43,12 +43,14 @@
 				</thead>
 
 				<tr th:each="voo : ${voos}">
-					<td><span th:text="${voo.id}"></span></td>
+					<td>VOFD-0<span th:text="${voo.id}"></span></td>
 					<td><span th:text="${voo.origem}"></span></td>
 					<td><span th:text="${voo.destino}"></span></td>
 					<td><span th:text="${voo.datavoo}"></span></td>
 					<td><span th:text="${voo.horario}"></span></td>
 					<td><span th:text="${voo.preco}"></span></td>
+					
+					<td><a class="btn btn-info" th:href="@{/cadastro/} + ${voo.id}">Reservar</a></td>
 				</tr>
 			</table>
 		</div>

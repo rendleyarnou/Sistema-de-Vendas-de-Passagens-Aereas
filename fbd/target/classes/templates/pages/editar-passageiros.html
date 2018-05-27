@@ -29,58 +29,39 @@
 	</nav>
 	<div class="container">
 
-		<table class="table table-hover">
-			<thead>
-				<tr>
-					<th>TICKET</th>
-					<th>ORIGEM</th>
-					<th>DESTINO</th>
-					<th>DATA</th>
-					<th>HORARIO</th>
-					<th>PREÇO</th>
-				</tr>
-			</thead>
+		<form th:object="${passObj}" action="/update-pass" method="POST">
 
-			<tr th:each="voo : ${voo}">
-				<td>VOFD-0<span th:text="${voo.id}"></span></td>
-				<td><span th:text="${voo.origem}"></span></td>
-				<td><span th:text="${voo.destino}"></span></td>
-				<td><span th:text="${voo.datavoo}"></span></td>
-				<td><span th:text="${voo.horario}"></span></td>
-				<td><span th:text="${voo.preco}"></span></td>
-			</tr>
-		</table>
-
-		<form action="/add-pass" method="POST">
+			<input type="hidden" value="" th:field="*{pid}">
+			
 			<div class="form-group row">
 				<label for="example-text-input" class="col-2 col-form-label">Nome</label>
 				<div class="col-10">
-					<input class="form-control" type="text" value="" name="nome" required="required">
+					<input class="form-control" type="text" value="" th:field="*{nome}">
 				</div>
 			</div>
 			<div class="form-group row">
 				<label for="example-text-input" class="col-2 col-form-label">Idade</label>
 				<div class="col-10">
-					<input class="form-control" type="number" value="" max="100" required="required"
-						name="idade">
+					<input class="form-control" type="number" value="" max="100"
+						th:field="*{idade}">
 				</div>
 			</div>
 			<div class="form-group row">
 				<label for="example-text-input" class="col-2 col-form-label">CPF</label>
 				<div class="col-10">
-					<input class="form-control" type="text" value="" name="cpf" required="required">
+					<input class="form-control" type="text" value="" th:field="*{cpf}">
 				</div>
 			</div>
 			<div class="form-group row">
 				<label for="example-email-input" class="col-2 col-form-label">Email</label>
 				<div class="col-10">
-					<input class="form-control" type="email" value="" required="required"
-						placeholder="example@example.com" name="email" >
+					<input class="form-control" type="email" value=""
+						placeholder="example@example.com" th:field="*{email}">
 				</div>
 			</div>
 
 			<button type="submit" class="btn btn-info">Confirmar</button>
-			<a th:href="@{/}" class="btn btn-sm btn-default">Cancelar</a>
+			<a th:href="@{/passageiros}" class="btn btn-sm btn-default">Cancelar</a>
 		</form>
 	</div>
 </body>

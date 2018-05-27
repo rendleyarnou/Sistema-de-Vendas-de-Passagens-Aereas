@@ -2,22 +2,22 @@ package com.aerotickets.fbd.entity;
 
 public class Reserva {
 	
-	private Long  idReserva;
+	private Long  rid;
 	
 	private double valor;
 	
-	private Long idPassageiro;
+	private Long pid;
 	
-	private Long idVoo;
+	private Long vid;
 	
 	private int assento;
 
-	public Long getIdReserva() {
-		return idReserva;
+	public Long getRid() {
+		return rid;
 	}
 
-	public void setIdReserva(Long idReserva) {
-		this.idReserva = idReserva;
+	public void setRid(Long rid) {
+		this.rid = rid;
 	}
 
 	public double getValor() {
@@ -28,20 +28,20 @@ public class Reserva {
 		this.valor = valor;
 	}
 
-	public Long getIdPassageiro() {
-		return idPassageiro;
+	public Long getPid() {
+		return pid;
 	}
 
-	public void setIdPassageiro(Long idPassageiro) {
-		this.idPassageiro = idPassageiro;
+	public void setPid(Long pid) {
+		this.pid = pid;
 	}
 
-	public Long getIdVoo() {
-		return idVoo;
+	public Long getVid() {
+		return vid;
 	}
 
-	public void setIdVoo(Long idVoo) {
-		this.idVoo = idVoo;
+	public void setVid(Long vid) {
+		this.vid = vid;
 	}
 
 	public int getAssento() {
@@ -51,5 +51,4 @@ public class Reserva {
 	public void setAssento(int assento) {
 		this.assento = assento;
 	}
-
 }
