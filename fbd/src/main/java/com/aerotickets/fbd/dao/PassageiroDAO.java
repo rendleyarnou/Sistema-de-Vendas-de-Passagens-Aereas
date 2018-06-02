@@ -52,5 +52,14 @@ public class PassageiroDAO implements PassageiroRepository{
 		String sql = "insert into passageiro (nome, idade, cpf, email) values (?, ?, ?, ?)";
 		jdbc.update(sql, p.getNome(), p.getIdade(), p.getCpf(), p.getEmail());
 	}
+	
+	public int getPid(Passageiro p) {
+		String sql = "SELECT * FROM passageiro where cpf = ?";
+		RowMapper<Passageiro> rowMapper = new BeanPropertyRowMapper<Passageiro>(Passageiro.class);
+		
+		Passageiro passageiro = jdbc.queryForObject(sql, rowMapper, p.getCpf()); 
+		
+		return passageiro.getPid();
+	}
 
 }

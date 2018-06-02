@@ -1,5 +1,6 @@
 package com.aerotickets.fbd.dao;
 
+import java.sql.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,6 +33,13 @@ public class VooDAO implements VooRepository {
 		Voo voo = jdbc.queryForObject(sql, rowMapper, idVoo);
 		
 		return voo;
+	}
+
+	@Override
+	public List<Voo> getAllVoos(Date date) {
+		String sql = "select * from voo where datavoo = ?;";
+		RowMapper<Voo> rowMapper = new BeanPropertyRowMapper<Voo>(Voo.class);
+		return this.jdbc.query(sql, rowMapper, date);
 	}
 
 }

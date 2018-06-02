@@ -15,4 +15,6 @@ public interface PassageiroRepository {
 	void updatePassageiro(Passageiro p);
 	
 	void deletePassageiro(int pid);
+	
+	int getPid(Passageiro p);
 }

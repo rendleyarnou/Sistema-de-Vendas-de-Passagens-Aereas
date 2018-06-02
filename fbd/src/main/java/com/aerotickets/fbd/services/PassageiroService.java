@@ -41,5 +41,10 @@ public class PassageiroService implements PassageiroRepository {
 		passagRepo.deletePassageiro(pid);
 		
 	}
+	
+	@Override
+	public int getPid(Passageiro p) {
+		return passagRepo.getPid(p);
+	}
 
 }

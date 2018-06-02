@@ -1,46 +1,44 @@
 package com.aerotickets.fbd.entity;
 
 public class Reserva {
-	
-	private Long  rid;
-	
-	private double valor;
-	
-	private Long pid;
-	
-	private Long vid;
-	
+
+	private int rid;
+
+	private int pid;
+
+	private int vid;
+
 	private int assento;
 
-	public Long getRid() {
+	public Reserva() {}
+
+	public Reserva(int vid, int pid, int assento) {
+		this.pid = pid;
+		this.vid = vid;
+		this.assento = assento;
+	}
+
+	public int getRid() {
 		return rid;
 	}
 
-	public void setRid(Long rid) {
+	public void setRid(int rid) {
 		this.rid = rid;
 	}
 
-	public double getValor() {
-		return valor;
-	}
-
-	public void setValor(double valor) {
-		this.valor = valor;
-	}
-
-	public Long getPid() {
+	public int getPid() {
 		return pid;
 	}
 
-	public void setPid(Long pid) {
+	public void setPid(int pid) {
 		this.pid = pid;
 	}
 
-	public Long getVid() {
+	public int getVid() {
 		return vid;
 	}
 
-	public void setVid(Long vid) {
+	public void setVid(int vid) {
 		this.vid = vid;
 	}
 

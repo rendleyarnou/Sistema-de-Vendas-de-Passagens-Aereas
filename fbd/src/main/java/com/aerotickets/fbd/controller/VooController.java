@@ -1,10 +1,13 @@
 package com.aerotickets.fbd.controller;
 
+import java.sql.Date;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.aerotickets.fbd.services.VooService;
@@ -20,6 +23,15 @@ public class VooController {
 		ModelAndView mv = new ModelAndView("pages/listar-voos");
 		
 		mv.addObject("voos", service.getAllVoos());
+		
+		return mv;
+	}
+	
+	@RequestMapping("/pesquisa-voos")
+	public ModelAndView listar(@RequestParam("date") Date date) {
+		ModelAndView mv = new ModelAndView("pages/listar-voos");
+		
+		mv.addObject("voos", service.getAllVoos(date));
 		
 		return mv;
 	}

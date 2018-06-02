@@ -28,30 +28,26 @@
 	</nav>
 
 	<div class="container">
-			<h1 class="jumbotron">Voos Disponíveis</h1>
-			<table class="table table-hover">
-				<thead>
-					<tr>
-						<th>TICKET</th>
-						<th>ORIGEM</th>
-						<th>DESTINO</th>
-						<th>DATA</th>
-						<th>HORARIO</th>
-						<th>PREÇO</th>
-						</tr>
-				</thead>
-
-				<tr th:each="voo : ${voos}">
-					<td>VOFD-0<span th:text="${voo.id}"></span></td>
-					<td><span th:text="${voo.origem}"></span></td>
-					<td><span th:text="${voo.destino}"></span></td>
-					<td><span th:text="${voo.datavoo}"></span></td>
-					<td><span th:text="${voo.horario}"></span></td>
-					<td><span th:text="${voo.preco}"></span></td>
-					
-					<td><a class="btn btn-info" th:href="@{/cadastro/} + ${voo.id}">Reservar</a></td>
+		<h1 class="jumbotron">Reservas</h1>
+		<table class="table table-hover">
+			<thead>
+				<tr>
+					<th>ID</th>
+					<th>VOO</th>
+					<th>PASSAGEIRO</th>
+					<th>ASSENTO</th>
 				</tr>
-			</table>
-		</div>
+			</thead>
+
+			<tr th:each="res : ${reservas}">
+				<td><span th:text="${res.rid}"></span></td>
+				<td>VOFD-0<span th:text="${res.vid}"></span></td>
+				<td><span th:text="${res.pid}"></span></td>
+				<td><span th:text="${res.assento}"></span></td>
+
+				<td><a class="btn btn-danger"  th:href="@{/delete-reserva/} + ${res.pid}">Delete</a></td>
+			</tr>
+		</table>
+	</div>
 </body>
 </html>
