@@ -28,7 +28,10 @@ public class VooController {
 	}
 	
 	@RequestMapping("/pesquisa-voos")
-	public ModelAndView listar(@RequestParam("date") Date date) {
+	public ModelAndView listar(
+			@RequestParam("date") Date date, 
+			@RequestParam("origem") String org,
+			@RequestParam("destino") String dest) {
 		ModelAndView mv = new ModelAndView("pages/listar-voos");
 		
 		mv.addObject("voos", service.getAllVoos(date));
@@ -37,8 +40,12 @@ public class VooController {
 	}
 
 	@GetMapping("/")
-	public String home() {
-		return "index";
+	public ModelAndView home() {
+		ModelAndView mv = new ModelAndView("index");
+		
+		mv.addObject("voos", service.getAllVoos());
+		
+		return mv;
 	}
 	
 	@RequestMapping("/cadastro/{id}")

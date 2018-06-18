@@ -43,7 +43,9 @@ public class PassageiroDAO implements PassageiroRepository{
 
 	@Override
 	public void deletePassageiro(int pid) {
+		String sqlForeign = "delete from reserva where pid = ?";
 		String sql = "delete from passageiro where pid = ?";
+		jdbc.update(sqlForeign, pid);
 		jdbc.update(sql, pid);
 	}
 

@@ -24,6 +24,7 @@
 			<ul class="navbar-nav">
 				<li class="nav-item"><a class="nav-link" th:href="@{/voos}">Voos</a></li>
 				<li class="nav-item"><a class="nav-link" th:href="@{/reservas}">Reservas</a></li>
+				<li class="nav-item"><a class="nav-link" th:href="@{/passageiros}">Passageiros</a></li>
 			</ul>
 		</div>
 	</nav>
@@ -32,23 +33,15 @@
 		
 		<form action="/pesquisa-voos" method="POST">
 			<div class="form-group">
-				<label for="exampleFormControlSelect1">Origem</label> <select
-					class="form-control">
-					<option>Sao Paulo - GRU</option>
-					<option>Fortaleza - FOR</option>
-					<option>Braília - BRA</option>
-					<option>Paraiba - PB</option>
-					<option>Chicago - EUA</option>
+				<label for="exampleFormControlSelect1">Origem</label> 
+				<select class="form-control" name="origem">
+					<option th:each="voo : ${voos}" th:text="${voo.origem}"></option>
 				</select>
 			</div>
 			<div class="form-group">
-				<label for="exampleFormControlSelect1">Destino</label> <select
-					class="form-control">
-					<option>Sao Paulo - GRU</option>
-					<option>Fortaleza - FOR</option>
-					<option>Braília - BRA</option>
-					<option>Paraiba - PB</option>
-					<option>Chicago - EUA</option>
+				<label for="exampleFormControlSelect1">Destino</label> 
+				<select class="form-control" name="destino">
+					<option th:each="voo : ${voos}" th:text="${voo.origem}"></option>
 				</select>
 			</div>
 			<div class="form-group row">
@@ -57,13 +50,6 @@
 					<input class="form-control" type="date" value="2018-01-07" name="date">
 				</div>
 			</div>
-			<!-- 			<div class="form-group row">
-				<label for="example-time-input" class="col-2 col-form-label">Horário</label>
-				<div class="col-10">
-					<input class="form-control" type="time" value="13:45:00"
-						id="example-time-input">
-				</div>
-			</div> -->
 			<button type="submit" class="btn btn-primary btn-lg btn-block">Pesquisar</button>
 		</form>
 	</div>
